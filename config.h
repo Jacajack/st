@@ -200,10 +200,12 @@ static MouseShortcut mshortcuts[] = {
 	{ Button5,              XK_NO_MOD,     "\005" },
 };
 
+/* number of lines scrolled per one wheel step */
+const unsigned int mouse_scroll_speed = 3;
 MouseKey mkeys[] = {
 /*    button,        mask          function     arguments */
-	{ Button4,       ShiftMask,    kscrollup,   {.i =  1} },
-	{ Button5,       ShiftMask,    kscrolldown, {.i =  1} },
+	{ Button4,       ShiftMask,    kscrollup,   {.i = mouse_scroll_speed} },
+	{ Button5,       ShiftMask,    kscrolldown, {.i = mouse_scroll_speed} },
 };
 
 /* Internal keyboard shortcuts. */
