@@ -2073,6 +2073,14 @@ run:
 	setlocale(LC_CTYPE, "");
 	XSetLocaleModifiers("");
 
+	char *alpha_env = getenv( "ST_ALPHA" );
+	if ( alpha_env != NULL )
+	{
+		float a;
+		if ( sscanf( alpha_env, "%f", &a ) == 1 )
+			alpha = a;
+	}
+
 	if(!(xw.dpy = XOpenDisplay(NULL)))
 		die("Can't open display\n");
 
