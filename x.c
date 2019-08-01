@@ -2073,6 +2073,7 @@ run:
 	setlocale(LC_CTYPE, "");
 	XSetLocaleModifiers("");
 
+	// ST_ALPHA control opacity
 	char *alpha_env = getenv( "ST_ALPHA" );
 	if ( alpha_env != NULL )
 	{
@@ -2080,6 +2081,10 @@ run:
 		if ( sscanf( alpha_env, "%f", &a ) == 1 )
 			alpha = a;
 	}
+
+	char *font_env = getenv( "ST_FONT" );
+	if ( font_env != NULL )
+		font = font_env;
 
 	if(!(xw.dpy = XOpenDisplay(NULL)))
 		die("Can't open display\n");
