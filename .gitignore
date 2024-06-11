@@ -2,3 +2,5 @@
 *.rej
 st
 *.o
+st-git
+*.zst
